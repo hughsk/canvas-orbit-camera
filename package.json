@@ -1,0 +1,34 @@
+{
+  "name": "canvas-orbit-camera",
+  "version": "0.0.0",
+  "description": "An alternative wrapper for orbit-camera that works independently of game-shell.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughsk/canvas-orbit-camera.git"
+  },
+  "author": "Hugh Kennedy <hughskennedy@gmail.com> (http://hughsk.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hughsk/canvas-orbit-camera/issues"
+  },
+  "homepage": "https://github.com/hughsk/canvas-orbit-camera",
+  "dependencies": {
+    "key-pressed": "0.0.1",
+    "mouse-position": "0.0.1",
+    "mouse-pressed": "0.0.1",
+    "orbit-camera": "0.0.3",
+    "scroll-speed": "0.0.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "canvas",
+    "orbit",
+    "camera",
+    "webgl",
+    "3d",
+    "arcball",
+    "rotation"
+  ]
+}
