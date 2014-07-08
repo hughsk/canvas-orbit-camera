@@ -36,6 +36,26 @@ Returns the current view matrix associated by the camera: a 16-element (4x4)
 `Float32Array` instance. Optionally, you can pass in your own array `out` here
 too.
 
+## Example
+
+``` javascript
+var canvas = document.body.appendChild(document.createElement('canvas'))
+var createCamera = require('canvas-orbit-camera')
+var raf = require('raf')
+
+var camera = createCamera(canvas)
+
+update()
+function update() {
+  raf(update)
+  
+  // Returns your view matrix for you
+  var view = camera.view()
+  
+  camera.tick()
+}
+```
+
 ## License
 
 MIT. See [LICENSE.md](http://github.com/hughsk/canvas-orbit-camera/blob/master/LICENSE.md) for details.
