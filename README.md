@@ -17,10 +17,16 @@ Based heavily on
 
 [![NPM](https://nodei.co/npm/canvas-orbit-camera.png)](https://nodei.co/npm/canvas-orbit-camera/)
 
-### camera = createCamera(canvas)
+### camera = createCamera(canvas[, options])
 
 Attaches a modified `orbit-camera` instance to the `canvas` – attaching the
 required event listeners for interaction.
+
+The following options are available:
+
+* `rotate`: disable rotation interactions by passing `false`.
+* `scale`: disable scaling interactions by passing `false`.
+* `pan`: disable panning interactions by passing `false`.
 
 See the [orbit-camera documentation](https://github.com/mikolalysenko/orbit-camera#readme)
 for a full list of available methods.
@@ -48,10 +54,10 @@ var camera = createCamera(canvas)
 update()
 function update() {
   raf(update)
-  
+
   // Returns your view matrix for you
   var view = camera.view()
-  
+
   camera.tick()
 }
 ```

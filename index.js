@@ -8,9 +8,14 @@ var panSpeed = 1
 
 module.exports = attachCamera
 
-function attachCamera(canvas) {
-  var scroll = createScroll(canvas, true)
-  var mbut = mb(canvas, true)
+function attachCamera(canvas, opts) {
+  opts = opts || {}
+  opts.pan = opts.pan !== false
+  opts.scale = opts.scale !== false
+  opts.rotate = opts.rotate !== false
+
+  var scroll = createScroll(canvas, opts.scale)
+  var mbut = mb(canvas, opts.rotate)
   var mpos = mp(canvas)
   var camera = createCamera(
       [0, 10, 30]
@@ -28,25 +33,25 @@ function attachCamera(canvas) {
     var height = canvas.height
     var width = canvas.width
 
-    if (mbut.left && !ctrl && !alt) {
+    if (opts.rotate && mbut.left && !ctrl && !alt) {
       camera.rotate(
           [ mpos.x / width - 0.5, mpos.y / height - 0.5 ]
         , [ mpos.prevX / width - 0.5, mpos.prevY / height - 0.5 ]
       )
     }
 
-    if (mbut.right || (mbut.left && ctrl && !alt)) {
+    if (opts.pan && mbut.right || (mbut.left && ctrl && !alt)) {
       camera.pan([
           panSpeed * (mpos.x - mpos.prevX) / width
         , panSpeed * (mpos.y - mpos.prevY) / height
       ])
     }
 
-    if (scroll[1]) {
+    if (opts.scale && scroll[1]) {
       camera.distance *= Math.exp(scroll[1] / height)
     }
 
-    if (mbut.middle || (mbut.left && !ctrl && alt)) {
+    if (opts.scale && (mbut.middle || (mbut.left && !ctrl && alt))) {
       var d = mpos.y - mpos.prevY
       if (!d) return
 
