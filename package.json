@@ -1,6 +1,6 @@
 {
   "name": "canvas-orbit-camera",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An alternative wrapper for orbit-camera that works independently of game-shell.",
   "main": "index.js",
   "scripts": {},
