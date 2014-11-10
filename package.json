@@ -16,10 +16,10 @@
   "homepage": "https://github.com/hughsk/canvas-orbit-camera",
   "dependencies": {
     "key-pressed": "0.0.1",
-    "mouse-position": "0.0.1",
+    "mouse-position": "^1.0.0",
     "mouse-pressed": "0.0.1",
     "orbit-camera": "0.0.3",
-    "scroll-speed": "0.0.0"
+    "scroll-speed": "^1.0.0"
   },
   "devDependencies": {},
   "keywords": [
