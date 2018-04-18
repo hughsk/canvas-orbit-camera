@@ -8,7 +8,7 @@ var panSpeed = 1
 
 module.exports = attachCamera
 
-function attachCamera(canvas, opts) {
+function attachCamera(canvas, opts, eye, center, up) {
   opts = opts || {}
   opts.pan = opts.pan !== false
   opts.scale = opts.scale !== false
@@ -18,9 +18,9 @@ function attachCamera(canvas, opts) {
   var mbut = mb(canvas, opts.rotate)
   var mpos = mp(canvas)
   var camera = createCamera(
-      [0, 10, 30]
-    , [0, 0, 0]
-    , [0, 1, 0]
+      eye || [0, 10, 30]
+    , center || [0, 0, 0]
+    , up || [0, 1, 0]
   )
 
   camera.tick = tick
